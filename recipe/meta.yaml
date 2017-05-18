@@ -13,7 +13,7 @@ requirements:
     - python
     - libgcc # [linux and py27 and np == '19']
     - scipy
-    - numpy x.x
+    - numpy
     - nose
     - matplotlib
     - numpydoc
@@ -28,7 +28,7 @@ requirements:
     - python
     - libgcc # [linux and py27 and np == '19']
     - scipy
-    - numpy x.x
+    - numpy
     - nose
     - matplotlib
     - numpydoc
