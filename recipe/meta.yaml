@@ -1,0 +1,50 @@
+{% set name = "landlab" %}
+{% set version = "1.0.3" %}
+
+package:
+  name: {{ name }}
+  version: {{ version }}
+
+source:
+  git_url: https://github.com/landlab/landlab
+
+requirements:
+  build:
+    - python
+    - libgcc # [linux and py27 and np == '19']
+    - scipy
+    - numpy x.x
+    - nose
+    - matplotlib
+    - numpydoc
+    - netcdf4
+    - hdf4 >=4.2.12 # [not win and np == 111]
+    - cython
+    - six
+    - pyyaml
+    - setuptools
+
+  run:
+    - python
+    - libgcc # [linux and py27 and np == '19']
+    - scipy
+    - numpy x.x
+    - nose
+    - matplotlib
+    - numpydoc
+    - netcdf4
+    - hdf4 >=4.2.12 # [not win and np == 111]
+    - cython
+    - six
+    - pyyaml
+    - setuptools
+
+about:
+  summary: The landlab modeling environment
+  home: https://github.com/landlab/landlab
+  license: MIT
+  license_file: LICENSE
+  dev_url: https://github.com/landlab/landlab
+
+build:
+  number: 0
