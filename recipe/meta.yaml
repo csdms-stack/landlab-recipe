@@ -1,5 +1,5 @@
 {% set name = "landlab" %}
-{% set version = "1.0.3" %}
+{% set version = "1.2.0" %}
 
 package:
   name: {{ name }}
@@ -7,13 +7,14 @@ package:
 
 source:
   git_url: https://github.com/landlab/landlab
+  git_tag: v1.2.0
 
 requirements:
   build:
     - python
     - libgcc # [linux and py27 and np == '19']
     - scipy
-    - numpy
+    - numpy 1.11.*
     - xarray
     - nose
     - matplotlib
@@ -30,6 +31,7 @@ requirements:
     - libgcc # [linux and py27 and np == '19']
     - scipy
     - numpy
+    - numpy >=1.11
     - xarray
     - nose
     - matplotlib
