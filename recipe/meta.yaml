@@ -1,5 +1,5 @@
 {% set name = "landlab" %}
-{% set version = "1.2.0" %}
+{% set version = 1.5.1 %}
 
 package:
   name: {{ name }}
@@ -7,47 +7,36 @@ package:
 
 source:
   git_url: https://github.com/landlab/landlab
-  git_tag: v1.2.0
+  git_tag: v{{ version }}
 
 requirements:
   build:
-    - python
-    - libgcc # [linux and py27 and np == '19']
-    - scipy
-    - numpy 1.11.*
-    - xarray
-    - nose
-    - matplotlib
-    - numpydoc
-    - netcdf4
-    - hdf4 >=4.2.12 # [not win and np == 111]
-    - cython
-    - six
-    - pyyaml
+    - {{ compiler("c") }}
     - setuptools
+    - python
+    - cython
+    - numpy 1.11.*
 
   run:
     - python
-    - libgcc # [linux and py27 and np == '19']
+    - cython
+    - numpy >=1.11,<1.14
     - scipy
-    - numpy
-    - numpy >=1.11
     - xarray
     - nose
     - matplotlib
     - numpydoc
     - netcdf4
-    - hdf4 >=4.2.12 # [not win and np == 111]
-    - cython
     - six
     - pyyaml
-    - setuptools
+    - statsmodels
 
-about:
-  summary: The landlab modeling environment
-  home: https://github.com/landlab/landlab
-  license: MIT
-  dev_url: https://github.com/landlab/landlab
+test:
+  requires:
+    - landlab
+    - numpy <1.14
 
 build:
   number: 0
+  string: {{ environ.get('BUILD_STR', '') }}
+  script: python setup.py install --single-version-externally-managed --record record.txt
