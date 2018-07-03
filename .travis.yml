@@ -2,10 +2,13 @@ language: generic
 os:
 - osx
 env:
+  matrix:
+  - TRAVIS_PYTHON_VERSION="2.7"
+  - TRAVIS_PYTHON_VERSION="3.5"
+  - TRAVIS_PYTHON_VERSION="3.6"
   global:
   - CONDA_PREFIX=$HOME/miniconda
   - MINICONDA_URL_BASE="https://repo.continuum.io/miniconda/Miniconda2-latest"
-  - TRAVIS_PYTHON_VERSION="2.7"
   - secure: b+CA+Bz2L7FZgSm4l6wR/s/xvxuwc83II0xe+2QwGpWBq98KfqvTxo7x/F5fTwIqOKfstq0NGgG+pGQUIXLLBlbaPDFYu3Mr1IGil+sJenV3jW2JFKPzsva/FCFkgc2k8PhjXqhdGM+MFzibDcKh7wNO2ykdhRUmgBsG3o90CNeh5/74JQ4FaBVkE76r7bkRIT/9DRTlNrwNjAi6c/rjlOCWyuAyEyYfLU6T9RD+n4UqmCEqihNDNfZF6+1cQnLJg9o//FkazPUpjqX/wpCLnTqrF+hifgAKka3TNT/oReMx9QIB2Gd7cV/BMUpBsRLIkTZoqY0Zd/pBo7Xj1CqWnnGgmdq2aMal6Usr4IB+a/vJcWgXL1ro+xihK1t5waowo93F2eAumb/8ED+XDLo7AJRkmoTVFHjo9DdNrnkMKcQ54F93930lKkFpUIHOduRXpnub6v9ljdbqihLINxMh/bwKulfA6qw+Jr4RzoTSglcib/zQTzyUJfjxhTWOvhPRgSbPeibTfZB18/FTp84wZsYyuWYhvirKYW3/h7IiXRaRqOH22rsNW+76ZDo3h3J2qUi5+P9pgLd/JhsPFmV9VqoF4+bc7euGhnRrn9TRONf+5IKtfGoD6lDQTK3oLJZ2G5Z/oMbifGYeN/pxcbOGcEGurATJukhAqoxfYqin1cE=
 sudo: false
 before_install:
