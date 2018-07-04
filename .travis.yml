@@ -11,6 +11,7 @@ env:
   - CONDA_PREFIX=$HOME/miniconda
   - MINICONDA_URL_BASE="https://repo.continuum.io/miniconda/Miniconda2-latest"
   - secure: b+CA+Bz2L7FZgSm4l6wR/s/xvxuwc83II0xe+2QwGpWBq98KfqvTxo7x/F5fTwIqOKfstq0NGgG+pGQUIXLLBlbaPDFYu3Mr1IGil+sJenV3jW2JFKPzsva/FCFkgc2k8PhjXqhdGM+MFzibDcKh7wNO2ykdhRUmgBsG3o90CNeh5/74JQ4FaBVkE76r7bkRIT/9DRTlNrwNjAi6c/rjlOCWyuAyEyYfLU6T9RD+n4UqmCEqihNDNfZF6+1cQnLJg9o//FkazPUpjqX/wpCLnTqrF+hifgAKka3TNT/oReMx9QIB2Gd7cV/BMUpBsRLIkTZoqY0Zd/pBo7Xj1CqWnnGgmdq2aMal6Usr4IB+a/vJcWgXL1ro+xihK1t5waowo93F2eAumb/8ED+XDLo7AJRkmoTVFHjo9DdNrnkMKcQ54F93930lKkFpUIHOduRXpnub6v9ljdbqihLINxMh/bwKulfA6qw+Jr4RzoTSglcib/zQTzyUJfjxhTWOvhPRgSbPeibTfZB18/FTp84wZsYyuWYhvirKYW3/h7IiXRaRqOH22rsNW+76ZDo3h3J2qUi5+P9pgLd/JhsPFmV9VqoF4+bc7euGhnRrn9TRONf+5IKtfGoD6lDQTK3oLJZ2G5Z/oMbifGYeN/pxcbOGcEGurATJukhAqoxfYqin1cE=
+  - secure: PotYMLIYLAxBtiHaJMxLo2PsBgqKyAzTaH6GvmvyBVF/x25hQ4Jdokmeo6i9YWjTqELdIa1wZ3gDzz+fXRTkOPJXcM+y3d3eHYCLby/HRHtTVBHwnh+K80WX2GIWpkcG+ZS60fB5aGvrxgO5OiEk+XwryYR4mALRu9Q4X7mUCszYfoA+gXO9OcXlmc7G+6mA+AAdBYixEkOy/CJ4krTccEwhkIClwi8XgGJCE3A+YACNDU/W5m9PDKMpQ6dh2TNGAORw0bODsAZOltJzGqJKaSbOJ1NUNFhZSUvCKJzkeGhM+CDWef5hsVeFhkQSyNKk+syDDqm/hx6xwFAQ3YCMgnU5AaBYrNGTKfc81Th0m1nydGL9gt52oW5TdlhYRQIw/sgzlqEE0Lhj6mg7YWpWpMLetKd5MFR3Hs9nJRNeIEobOZn4ZX+s0+oeEdp3GPre1me0LQKN6uolxhBpl2cZJsUxXU9chpTk+13587gT4bP78s8TtzIqY8O+yLHDkay1hIaDsHGBkW6/U7ohaNZQpRdwSnsteFd8ANXyM5iWtO1kdwpS8crCQmVYm0OCjJy9QMOoBLtSOk79r3ngC23WLANpJ16HEgfse2wSOTuYtDjStar0o2jYizaisX53Xe0ZmuAlSzHjgQvo/70TEZOg5qCnrsLhVBYF8lsz5l1FVCk=
 sudo: false
 before_install:
 - |
@@ -35,7 +36,7 @@ install:
 - source activate buildit
 - conda install -q conda-build anaconda-client coverage sphinx pytest
 script:
-- conda build ./recipe --old-build-string
+- conda build ./recipe
 after_success:
 - curl https://raw.githubusercontent.com/csdms/ci-tools/master/anaconda_upload.py
   > $HOME/anaconda_upload.py
