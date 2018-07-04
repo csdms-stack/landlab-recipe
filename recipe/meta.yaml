@@ -6,14 +6,16 @@ package:
   version: {{ version }}
 
 source:
-  git_url: https://github.com/landlab/landlab
-  git_tag: v{{ version }}
+  url: https://github.com/landlab/landlab/archive/v{{ version }}.tar.gz
+  fn: {{ name }}-{{ version }}.tar.gz
+  sha256: 789f40c9aff30a5c350ef738f744506f197322d2123fa8e5711166bcda4f5635
 
 requirements:
   build:
     - {{ compiler("c") }}
     - setuptools
     - python
+    - pip
     - cython
     - numpy 1.11.*
 
@@ -38,5 +40,4 @@ test:
 
 build:
   number: 0
-  string: {{ environ.get('BUILD_STR', '') }}
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  script: python -m pip install --no-deps --ignore-installed .
