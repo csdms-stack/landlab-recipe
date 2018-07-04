@@ -11,7 +11,7 @@ source:
   sha256: 789f40c9aff30a5c350ef738f744506f197322d2123fa8e5711166bcda4f5635
 
 requirements:
-  build:
+  host:
     - {{ compiler("c") }}
     - setuptools
     - python
